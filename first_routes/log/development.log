@@ -4572,3 +4572,31 @@ Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 4.0ms)
   ↳ db/seeds.rb:97
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:9
+Started GET "/users?username=bob" for ::1 at 2022-05-05 11:39:25 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mycityneedsme/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.7.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"bob"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bob"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 30ms (Views: 0.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/users?username=donald" for ::1 at 2022-05-05 11:39:33 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"donald"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "donald"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?username=dan" for ::1 at 2022-05-05 11:39:39 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"dan"}
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dan"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 33ms (Views: 14.6ms | ActiveRecord: 16.7ms)
+
+
