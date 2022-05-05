@@ -24,28 +24,28 @@ ActiveRecord::Base.transaction do
     art1 = Artwork.create(
         id: 1,
         artist_id: 1,
-        title: "dsjgnkrwelmgokwlg;",
+        title: "first",
         image_url: "wefijbnweogfwoemf"
     )
 
     art2 = Artwork.create(
         id: 2,
         artist_id: 1,
-        title: "flkgmr423jgmgoewfi4ekwlg;",
+        title: "second",
         image_url: "wefi232r312fwoemf"
     )
 
     art3 = Artwork.create(
         id: 3,
         artist_id: 2,
-        title: "ijotesj328r3erjkwdlg;",
+        title: "third",
         image_url: "wefuhewbfi31emf"
     )
 
     art4 = Artwork.create(
         id: 4,
         artist_id: 2,
-        title: "436tsj34uyg23ihdnjksqqw;",
+        title: "fourth",
         image_url: "43r13re432emf"
     )
 
