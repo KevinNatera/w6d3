@@ -33,7 +33,7 @@ class ArtworkSharesController < ApplicationController
     def destroy 
         @artwork_share = ArtworkShare.find(params[:id])
         @artwork_share.destroy 
-        redirect_to artwork_share_url
+        redirect_to artwork_shares_url
     end
 
     private
