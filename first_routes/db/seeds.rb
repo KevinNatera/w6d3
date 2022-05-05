@@ -72,4 +72,31 @@ ActiveRecord::Base.transaction do
         artwork_id: 4,
         viewer_id: 2
     )
+
+    comment1 = Comment.create(
+        id: 1,
+        user_id: 1,
+        artwork_id: 1,
+        body: "I'M THE GREATEST"
+    )
+
+    comment2 = Comment.create(
+        id: 2,
+        user_id: 1,
+        artwork_id: 1,
+        body: "I SWEAR"
+    )
+    comment3 = Comment.create(
+        id: 3,
+        user_id: 1,
+        artwork_id: 4,
+        body: "ur trash"
+    )
+
+    comment4 = Comment.create(
+        id: 4,
+        user_id: 2,
+        artwork_id: 4,
+        body: "bruh"
+    )
   end
