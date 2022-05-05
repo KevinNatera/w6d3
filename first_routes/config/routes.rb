@@ -25,5 +25,5 @@ Rails.application.routes.draw do
     end
 
     resources :comments, only: [:index, :create, :destroy]
-
+    
 end

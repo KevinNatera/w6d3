@@ -11,7 +11,8 @@ ActiveRecord::Base.transaction do
     Artwork.delete_all
     ArtworkShare.delete_all
     Comment.delete_all 
-    
+    Like.delete_all 
+
     user1 = User.create(
       id: 1,
       username: "bob"
@@ -20,6 +21,16 @@ ActiveRecord::Base.transaction do
     user2 = User.create(
       id: 2,
       username: "donald"
+    )
+
+    user3 = User.create(
+        id: 3,
+        username: "obo"
+    )
+    
+    user4 = User.create(
+        id: 4,
+        username: "not_bob"
     )
     
     art1 = Artwork.create(
@@ -93,11 +104,52 @@ ActiveRecord::Base.transaction do
         artwork_id: 4,
         body: "ur trash"
     )
-
+    
     comment4 = Comment.create(
         id: 4,
         user_id: 2,
         artwork_id: 4,
         body: "bruh"
     )
+
+    like1 = Like.create(
+        id: 1,
+        user_id: 1,
+        likeable_id: comment1.id,
+        likeable_type: Comment
+    )
+
+    like2 = Like.create(
+        id: 2,
+        user_id: 2,
+        likeable_id: comment1.id,
+        likeable_type: Comment
+    )
+
+    like3 = Like.create(
+        id: 3,
+        user_id: 3,
+        likeable_id: comment1.id,
+        likeable_type: Comment
+    )
+
+    like4 = Like.create(
+        id: 4,
+        user_id: 1,
+        likeable_id: comment2.id,
+        likeable_type: Comment
+    )
+
+    like5 = Like.create(
+        id: 5,
+        user_id: 2,
+        likeable_id: art1.id,
+        likeable_type: Artwork
+    )
+
+
+    #total likes
+    #bob (user1) has 3 likes on comment 1, 1 like on art 1
+    #user2 has 1 like on artwork4
+
   end
