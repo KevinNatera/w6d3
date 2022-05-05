@@ -23,7 +23,4 @@ class Artwork < ApplicationRecord
 
     has_many :likes, as: :likeable, dependent: :destroy
       
-    # has_many :artwork_likers2, 
-    #     through: :likeable,
-    #     source: :artwork_likers
 end
