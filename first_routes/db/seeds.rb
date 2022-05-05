@@ -10,7 +10,8 @@ ActiveRecord::Base.transaction do
     User.delete_all
     Artwork.delete_all
     ArtworkShare.delete_all
-  
+    Comment.delete_all 
+    
     user1 = User.create(
       id: 1,
       username: "bob"
